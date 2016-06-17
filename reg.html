@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+
+        div label select {
+            margin-left: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>88</h1>
-    <form action="server/reg.php">
+
+    <a href="AJAX/get2.html" target="_black">用户表格</a>
+    <hr>
+    <form action="server/reg.php" onsubmit="return checkForm()">
         <div>
             <label>姓名：<input name='name' type="text"></label>
         </div>
@@ -15,33 +26,106 @@
         </div>
         <div>
             <label>性别：</label>
-            <label><input name="gender" type="radio">男</label>
-            <label><input name="gender" type="radio">女</label>
+            <label><input name="gender" value='男' type="radio" checked="checked">男</label>
+            <label><input name="gender" value='女' type="radio">女</label>
         </div>
         <div>
             <label>爱好：</label>
-            <label>旅游<input name="hobbies" type="checkbox"></label>
-            <label>读书<input name="hobbies" type="checkbox"></label>
-            <label>看电影<input name="hobbies" type="checkbox"></label>
+            <label>旅游<input value="旅游" name="hobbies" type="checkbox"></label>
+            <label>读书<input value="读书" name="hobbies" type="checkbox"></label>
+            <label>看电影<input value="看电影" name="hobbies" type="checkbox"></label>
+            <label>玩游戏<input value="玩游戏" name="hobbies" type="checkbox"></label>
+            <label>运动<input value="运动" name="hobbies" type="checkbox"></label>
         </div>
         <div>
-            <label>地址：<input name="address" type="text"></label>
+            <label>地址：<textarea name="address" cols="30" rows="3"></textarea></label>
         </div>
         <div>
             <label>电话：<input name="mobile" type="text"></label>
         </div>
         <div>
-            <label>
-                <select name="edu" id="">
-                    <option value="">请选择</option>
-                    <option value="">大专</option>
-                    <option value="">本科</option>
-                    <option value="">硕士</option>
-                    <option value="">博士</option>
+            <label>学历：
+                <select name="edu">
+                    <option value="0">请选择</option>
+                    <option value="大专">大专</option>
+                    <option value="本科">本科</option>
+                    <option value="硕士">硕士</option>
+                    <option value="博士">博士</option>
                 </select>
             </label>
         </div>
         <button>确定并提交</button>
     </form>
+
+    <script src="../jquery-1.12.3.js"></script>
+    <script>
+
+        function checkForm() {
+
+            var $name = $('input[name=name]');
+            var $age = $('input[name=age]');
+            var $hobbies = $('input[name=hobbies]');
+            var $address = $('textarea[name=address]');
+            var $mobile = $('input[name=mobile]');
+            var $education = $('select[name=edu]');
+            var mobileRE = /^1\d{10}$/;
+            
+            // console.log($name);
+            if($.trim($name.val()) == '') {
+                alert('姓名不能为空！');
+                return false;
+            }
+
+            if($.trim($age.val()) == '') {
+                alert('年龄不能为空！');
+                return false;
+
+            }
+
+            if(isNaN($age.val())) {
+                alert('年龄必须为数字！');
+                return false;
+            }
+
+            if($('input[name=hobbies]:checked').length < 2) {
+                alert('请选择至少两个爱好！');
+                return false;
+            }
+
+
+
+            if($.trim($address.val()) == '') {
+                alert('地址不能为空！');
+                return false;
+            }
+
+
+            if($.trim($mobile.val()) == '') {
+                alert('电话不能为空！');
+                return false;
+            }
+
+
+            if(!mobileRE.test($mobile.val())) {
+                alert('手机号码格式不正确！');
+                return false;
+            }
+
+            // console.log($education)
+            if($education.val() == 0) {
+                alert('请选择学历！');
+                return false;
+            }
+
+
+
+            console.log('ok')
+            // return false;
+        }
+
+       
+
+
+    </script>
 </body>
 </html>
