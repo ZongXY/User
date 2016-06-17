@@ -19,7 +19,7 @@
 	$mobile = $_GET["mobile"];
 	$address = $_GET["address"];
 	$hobbies = $_GET["hobbies"];
-	$img = $_GET["img"];
+	// $img = $_GET["img"];
 
 	$now = date("Y-m-d h:i:s");
 
@@ -32,12 +32,14 @@
         "address" => $address,
         "mobile" => $mobile,
         "hobbies" => $hobbies,
-        "user_img" => $img,
+        // "user_img" => $img,
         "edu" => $edu,
         "regDate" => $now
     );
 
     $id = $db->insert ('usermng', $data);
+
+    sleep(2);
 
     if ($id > 0) {
     	// echo 'success';

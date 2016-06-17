@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户管理系统</title>
+
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/userMang.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+  <!-- 导航   -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">后台管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">用户管理 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  <!-- 导航 -->
+    <div class="container">
+      <!-- 按钮组 -->
+      <div class="btn-group" >
+        <a href="usermang.html"  class="btn btn-primary">新增用户</a>
+        <a href="userListmang.html"  class="btn btn-success">用户列表</a>
+        <a href="javascript:;"  class="btn btn-success">操作系统</a>
+      </div>
+    <!-- 按钮组 -->
+
+    <!-- 表单 -->
+
+      <div class="row">
+        <div class="col-sm-7 col-md-offset-3 mg-20">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">姓名</label>
+              <div class="col-sm-6 ">
+                <input id="name" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">年龄</label>
+              <div class="col-sm-6">
+                <input id="age" class="form-control" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">性别</label>
+              <div class="col-sm-6">
+                <label class="radio-inline">
+                  <input type="radio" name="gender" value="男"> 男
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="gender" value="女"> 女
+                </label>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">电话</label>
+              <div class="col-sm-6">
+                <input id="mobile" class="form-control" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">地址</label>
+              <div class="col-sm-6">
+                <input id="address" class="form-control" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">学历</label>
+              <div class="col-sm-6">
+                <select id="edu" class="form-control">
+                  <option value="0">请选择</option>
+                  <option value="大专">大专</option>
+                  <option value="本科">本科</option>
+                  <option value="硕士">硕士</option>
+                  <option value="博士">博士</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">爱好</label>
+              <div class="col-sm-5">
+                <label class="checkbox-inline">
+                  <input name="hobbies" type="checkbox" value="睡觉"> 睡觉
+                </label>
+                <label class="checkbox-inline">
+                  <input name="hobbies" type="checkbox" value="旅游"> 旅游
+                </label>
+                <label class="checkbox-inline">
+                  <input name="hobbies" type="checkbox" value="爬山"> 爬山
+                </label>
+                <label class="checkbox-inline">
+                  <input name="hobbies" type="checkbox" value="看电影"> 看电影
+                </label>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+              <label class="col-sm-2 col-md-offset-2 control-label">操作</label>
+              <div class="col-sm-6 ">
+                <input id="del" class="form-control">
+              </div>
+            </div> -->
+            <div class="form-group">
+              <div class="col-sm-offset-5 col-sm-7">
+                <button id="saveBtn" type="button" class="btn btn-info">&nbsp;&nbsp;&nbsp;保存&nbsp;&nbsp;&nbsp;</button>
+                <button id="resetBtn" type="reset" class="btn btn-danger">&nbsp;&nbsp;&nbsp;重置&nbsp;&nbsp;&nbsp;</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+  <!-- 表单 -->
+
+    </div>
+
+
+    <div id="myDlg" class="modal fade bs-example-modal-sm" data-backdrop="false">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-body">
+            保存成功
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <script src="../../jquery-1.12.3.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/userMang.js"></script>
+    <script src="../../underscore-min.js"></script>  
+  </body>
+</html>

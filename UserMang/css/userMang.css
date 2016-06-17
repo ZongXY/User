@@ -1,0 +1,39 @@
+.mg-20 {
+    margin-top: 30px;
+}
+
+.marg {
+    margin-top: 30px;
+}
+
+.loading {
+    background-image: url(../img/222.gif);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    opacity: 0.5;
+}
+
+.loading-wp {
+    width: 338px;
+    height: 338px;
+    background-image: url(../img/333.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -169px 0 0 -169px;
+    border-radius: 170px;
+    display: none;
+}
+
+.width th, .width td {
+    width: 100px;
+    text-align: center;
+}
+
+/*.pagination {
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+}*/
