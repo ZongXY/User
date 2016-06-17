@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax跨域请求</title>
+    <script src="../../jquery-1.12.3.js"></script>
+</head>
+<body>
+    <button id="requestBtn">Ajax跨域请求</button>
+
+    <script>
+        $('#requestBtn').on('click', function() {
+
+            // 跨域请求方法一
+            // var url = 'http://localhost/Wserver/User/server/ajaxUserList.php?callback=?' //服务器接口地址
+            // $.get(url, function(response) {
+            //     console.log(response)
+            // },'json')
+            
+
+            // 方法二
+            // var url = 'http://localhost/Wserver/User/server/ajaxUserList.php?callback=?';
+            // $.getJSON(url, function(response) {
+            //     console.log(response);
+            // })
+            
+            $.ajax({
+                url:'http://localhost/Wserver/User/server/ajaxUserList.php?callback=?',
+                data: {size: 5},
+                dataType:'json',
+                success: function(response) {
+                    console.log(response)
+                }
+            })
+        })
+        
+    </script>
+</body>
+</html>
